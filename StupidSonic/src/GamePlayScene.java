@@ -9,6 +9,7 @@ public class GamePlayScene extends Scene {
     private Poleax poleax;
     private Boom boom;
     private ScoreBoard scoreBoard;
+    private MinhBird minhBird;
 
     public static int timeRun = 0;
     private int count = 0;
@@ -20,6 +21,7 @@ public class GamePlayScene extends Scene {
         bucket = new Bucket();
         poleax = new Poleax();
         boom = new Boom();
+        minhBird = new MinhBird();
         scoreBoard = new ScoreBoard(600,50);
     }
     @Override
@@ -32,6 +34,7 @@ public class GamePlayScene extends Scene {
         bird.draw(g);
         poleax.draw(g);
         boom.draw(g);
+        minhBird.draw(g);
     }
     public void update() {
         background.update();
@@ -41,6 +44,7 @@ public class GamePlayScene extends Scene {
         bird.update();
         boom.update();
         poleax.update();
+        minhBird.update();
         count++;
         if (count == 5) {
             GamePlayScene.timeRun++;
@@ -60,9 +64,12 @@ public class GamePlayScene extends Scene {
             background = new Background();
             bucket = new Bucket();
             poleax = new Poleax();
+            MinhBird.vectorBullet.clear();
             boom = new Boom();
+            minhBird = new MinhBird();
             scoreBoard = new ScoreBoard(600,50);
             SonicManager.getInstance().getStupidSonic().reInit();
+            Sonic.isDie = false;
         }
     }
     @Override
@@ -75,7 +82,7 @@ public class GamePlayScene extends Scene {
         if(e.getKeyCode() == KeyEvent.VK_B) {
             GameManager.getInstance().stackMenuGame.pop();
         }
-        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+        if (Sonic.isDie == false && e.getKeyCode() == KeyEvent.VK_SPACE) {
             Sonic.isRun = false; // chuyen Animation sang Jump
             Sonic.isTop = 0; // posY--;
             Sonic.sum = 0; // khoi tao sum ve 0

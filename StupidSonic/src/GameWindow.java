@@ -13,10 +13,13 @@ public class GameWindow extends Frame implements Runnable {
     Graphics seconds;
     Image image;
     private static Clip backgroudSound;
+    public static Clip dieSound;
     public GameWindow() {
         JVSound jvSound = new JVSound();
         backgroudSound = jvSound.playWAV("Resources/menu-music-game.wav");
         backgroudSound.loop(20);
+        JVSound dieJVSound = new JVSound();
+        dieSound = dieJVSound.playWAV("Resources/cartoon004.wav");
         GameManager.getInstance().stackMenuGame.push(new MenuScene());
 
         this.setTitle("TechKids - code the change");

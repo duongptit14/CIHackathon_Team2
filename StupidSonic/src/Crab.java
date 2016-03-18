@@ -38,8 +38,8 @@ public class Crab  extends  Enemy{
     @Override
     public void update() {
         if(this.checkCollistion()){
-            GameWindow.isLose = true;
-
+            GameWindow.dieSound.loop(2);
+            Sonic.isDie = true;
         }
         this.move();
     }

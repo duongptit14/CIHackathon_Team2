@@ -23,10 +23,9 @@ public class Bird extends Enemy {
                         , 60
                         , 70);
         if (rectBird.intersects(rectSonic)) {
-//            isCollistion = true;
+
             return true;
         } else {
-//            isCollistion = false;
             return false;
         }
     }
@@ -43,6 +42,7 @@ public class Bird extends Enemy {
     @Override
     public void update() {
         if(this.checkCollistion()) {
+            GameWindow.dieSound.loop(2);
             isCollistion = true;
         }
         if(isCollistion) {
