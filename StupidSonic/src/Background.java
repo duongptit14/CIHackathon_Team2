@@ -21,8 +21,8 @@ public class Background {
     private int speedBackground, speedBotBackground;
     public Background() {
         try {
-            speedBotBackground = 6;
-            speedBackground = 2;
+            speedBotBackground = 12;
+            speedBackground = 5;
             background1 = ImageIO.read( new File(Resources.background));
             background2 = ImageIO.read(new File(Resources.background));
             botBackground1 = ImageIO.read(new File(Resources.botBackground));
