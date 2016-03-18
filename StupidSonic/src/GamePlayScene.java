@@ -10,11 +10,12 @@ public class GamePlayScene extends Scene {
     private Boom boom;
     private ScoreBoard scoreBoard;
     private MinhBird minhBird;
-
+    private Gift gift;
     public static int timeRun = 0;
     private int count = 0;
 
     public GamePlayScene() {
+        gift = new Gift();
         crab = new Crab();
         background = new Background();
         bird = new Bird();
@@ -26,6 +27,7 @@ public class GamePlayScene extends Scene {
     }
     @Override
     public void draw(Graphics g) {
+
         background.draw(g);
         SonicManager.getInstance().getStupidSonic().draw(g);
         bucket.draw(g);
@@ -35,6 +37,7 @@ public class GamePlayScene extends Scene {
         poleax.draw(g);
         boom.draw(g);
         minhBird.draw(g);
+        gift.draw(g);
     }
     public void update() {
         background.update();
@@ -45,6 +48,7 @@ public class GamePlayScene extends Scene {
         boom.update();
         poleax.update();
         minhBird.update();
+        gift.update();
         count++;
         if (count == 5) {
             GamePlayScene.timeRun++;
@@ -64,6 +68,7 @@ public class GamePlayScene extends Scene {
             background = new Background();
             bucket = new Bucket();
             poleax = new Poleax();
+            gift = new Gift();
             MinhBird.vectorBullet.clear();
             boom = new Boom();
             minhBird = new MinhBird();
@@ -87,10 +92,17 @@ public class GamePlayScene extends Scene {
             Sonic.isTop = 0; // posY--;
             Sonic.sum = 0; // khoi tao sum ve 0
         }
+        if(e.getKeyCode()==KeyEvent.VK_F && Sonic.isSuper ) {
+            background.setSpeedBackground(15);
+            background.setSpeedBotBackground(25);
+        }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
+//        if(e.getKeyCode() == KeyEvent.VK_F && Sonic.isSuper) {
+//            background.setSpeedBackground(1);
+//            background.setSpeedBotBackground(8);
+//        }
     }
 }

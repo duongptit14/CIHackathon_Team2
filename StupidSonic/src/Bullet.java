@@ -35,7 +35,7 @@ public class Bullet extends Enemy {
         setPositionX(getPositionX() - getSpeed());
     }
     public void update() {
-        if(checkCollistion()) {
+        if(checkCollistion() && Sonic.isSuper==false) {
 //            GameWindow.isLose = true;
             GameWindow.dieSound.loop(2);
             Sonic.isDie = true;

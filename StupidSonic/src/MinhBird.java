@@ -64,7 +64,7 @@ public class MinhBird extends Enemy {
             this.shot();
             count = 0;
         }
-        if(this.checkCollistion()){
+        if(this.checkCollistion() && Sonic.isSuper==false){
             GameWindow.dieSound.loop(2);
             Sonic.isDie = true;
         }

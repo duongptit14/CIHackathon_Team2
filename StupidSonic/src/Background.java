@@ -19,6 +19,7 @@ public class Background {
     private int positionXBotBackground2;
 
     private int speedBackground, speedBotBackground;
+
     public Background() {
         try {
             speedBotBackground = 12;
@@ -36,6 +37,10 @@ public class Background {
         positionXBotBackground2 = 1824;
     }
     public void update() {
+        if(Sonic.isSuper==false) {
+            speedBackground = 5;
+            speedBotBackground = 12;
+        }
         this.positionXBackground1 -= this.speedBackground;
         if( this.positionXBackground1 <= -background1.getWidth()) this.positionXBackground1 += 2*background1.getWidth();
         this.positionXBackground2 -= this.speedBackground;
@@ -51,5 +56,21 @@ public class Background {
         g.drawImage(background2, positionXBackground2,0,null);
         g.drawImage(botBackground1, positionXBotBackground1,550,null);
         g.drawImage(botBackground2, positionXBotBackground2,550,null);
+    }
+
+    public int getSpeedBackground() {
+        return speedBackground;
+    }
+
+    public void setSpeedBackground(int speedBackground) {
+        this.speedBackground = speedBackground;
+    }
+
+    public int getSpeedBotBackground() {
+        return speedBotBackground;
+    }
+
+    public void setSpeedBotBackground(int speedBotBackground) {
+        this.speedBotBackground = speedBotBackground;
     }
 }

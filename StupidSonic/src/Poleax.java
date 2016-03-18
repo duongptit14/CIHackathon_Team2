@@ -60,7 +60,7 @@ public class Poleax extends Enemy{
     }
     @Override
     public void update() {
-        if(this.checkCollistion()){
+        if(this.checkCollistion() && Sonic.isSuper==false){
             GameWindow.isLose = true;
         }
         this.move();

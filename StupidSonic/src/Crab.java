@@ -37,7 +37,7 @@ public class Crab  extends  Enemy{
     }
     @Override
     public void update() {
-        if(this.checkCollistion()){
+        if(this.checkCollistion() && Sonic.isSuper==false){
             GameWindow.dieSound.loop(2);
             Sonic.isDie = true;
         }

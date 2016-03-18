@@ -10,5 +10,6 @@ public class Resources {
     public static final String poleax2 = "Resources/Poleax/Poleax2.png";
     public static final String minhBird = "Resources/chimdaibang.png";
     public static final String bullet = "Resources/bullet.png";
+    public static final String gift = "Resources/Gift/GIFT.png";
 
 }
