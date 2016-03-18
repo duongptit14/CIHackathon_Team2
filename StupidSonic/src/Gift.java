@@ -45,6 +45,8 @@ public class Gift extends Enemy {
     @Override
     public void update() {
         if(this.checkCollistion()){
+//            setPositionY(-300);
+//            setPositionX(600);
             GameWindow.dieSound.loop(4);
             Sonic.isSuper = true;
 //            Sonic.isDie = true;

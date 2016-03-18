@@ -16,7 +16,7 @@ public class GamePlayScene extends Scene {
 
     public GamePlayScene() {
         gift = new Gift();
-        crab = new Crab();
+//        crab = new Crab();
         background = new Background();
         bird = new Bird();
         bucket = new Bucket();
@@ -32,7 +32,7 @@ public class GamePlayScene extends Scene {
         SonicManager.getInstance().getStupidSonic().draw(g);
         bucket.draw(g);
         scoreBoard.draw(g);
-        crab.draw(g);
+//        crab.draw(g);
         bird.draw(g);
         poleax.draw(g);
         boom.draw(g);
@@ -43,10 +43,11 @@ public class GamePlayScene extends Scene {
         background.update();
         SonicManager.getInstance().getStupidSonic().update();
         bucket.update();
-        crab.update();
+//        crab.update();
         bird.update();
         boom.update();
         poleax.update();
+//        poleax.move();
         minhBird.update();
         gift.update();
         count++;
@@ -63,7 +64,7 @@ public class GamePlayScene extends Scene {
             }
             GameWindow.isLose = false;
             GameManager.getInstance().stackMenuGame.push(new ScoreBoardScene());
-            crab = new Crab();
+//            crab = new Crab();
             bird = new Bird();
             background = new Background();
             bucket = new Bucket();
