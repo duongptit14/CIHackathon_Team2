@@ -47,7 +47,6 @@ public class GamePlayScene extends Scene {
         bird.update();
         boom.update();
         poleax.update();
-//        poleax.move();
         minhBird.update();
         gift.update();
         count++;
