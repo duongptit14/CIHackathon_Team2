@@ -17,5 +17,6 @@ public class Resources {
     public static final String gameOver = "Resources/Sound/cartoon004.wav";
     public static final String menuImage = "Resources/Sprite/Menu/MENU.png";
     public static final String gameOverImage = "Resources/Sprite/GameOver/game over.jpg";
+    public static final String aboutImage = "Resources/Sprite/About/About.png";
 }
 

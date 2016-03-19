@@ -1,4 +1,5 @@
 package View;
+import Object.*;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -14,7 +15,7 @@ public class AboutScene extends Scene {
     BufferedImage about;
     public AboutScene() {
         try {
-            about = ImageIO.read(new File("Resources/About.png"));
+            about = ImageIO.read(new File(Resources.aboutImage));
         } catch (IOException e) {
             e.printStackTrace();
         }
